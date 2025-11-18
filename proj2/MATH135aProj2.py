@@ -15,7 +15,18 @@ def problem_1_spp():
     # For the first iteration going to the next, find the scaled vector
     for i in range(n - 1):
         # Finding the pivot row 
-        for j in range(n):
+        scaled_pivots = [ problem_matrix[0][i]/scale_vector[0] ,
+                          problem_matrix[1][i]/scale_vector[1] ,
+                          problem_matrix[2][i]/scale_vector[2] ,
+                          problem_matrix[3][i]/scale_vector[3] ]
+        # Finding the pivot row
+        max_value = max(scaled_pivots)
+        pivot_row = scaled_pivots.index(max_value)
+        # Swap the index vector with the current iteration
+        i, pivot_row = pivot_row, i
+        # solve for zeroing out the columns
+
+
             
 
 
