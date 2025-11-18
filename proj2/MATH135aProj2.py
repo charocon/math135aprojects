@@ -7,6 +7,14 @@ def problem_1_spp():
                       [0.1784, 0.4002, 0.2786, 0.3927, 0.2557]]
 
     scale_vector = [0,0,0,0]
+
+    # Finding the scale vector
+    for i in range(n-1):
+        scaled_max = 0
+        for j in range(n-1):
+            scaled_max = max(scaled_max, problem_matrix[i][j])
+        scale_vector[i] = scaled_max
+
     index_vector = [1,2,3,4]
     scaled_pivots = [0,0,0,0]
     n = 4
@@ -24,15 +32,18 @@ def problem_1_spp():
         pivot_row = scaled_pivots.index(max_value)
         # Swap the index vector with the current iteration
         i, pivot_row = pivot_row, i
-        # solve for zeroing out the columns
 
-
+        # processed rows for skipping the forward substituion
+        processed_row = []
+        # solve for zeroing out the columns of the pivot row
+        for j in range(n):
+            if j == pivot_row:
+                continue
             
 
-
-
+            
 def problem_2_tri():
-    print("bruh")
+    
 
 def main():
     prob_input = input("Which problem would you like to do\n")
